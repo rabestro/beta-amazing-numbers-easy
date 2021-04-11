@@ -4,4 +4,5 @@ include 'stage2'
 include 'stage3'
 include 'stage4'
 include 'stage5'
+include 'stage6'
 
