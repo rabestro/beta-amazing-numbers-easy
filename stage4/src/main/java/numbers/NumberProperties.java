@@ -1,6 +1,16 @@
 package numbers;
 
+import java.util.Map;
+import java.util.function.BooleanSupplier;
+import java.util.stream.Collectors;
+
 public class NumberProperties {
+    private final Map<String, BooleanSupplier> PROPERTIES = Map.of(
+            "gapful", this::isGapful,
+            "harshad", this::isHarshad,
+            "spy", this::isSpy
+    );
+
     private final long number;
 
     public NumberProperties(long number) {
@@ -40,6 +50,15 @@ public class NumberProperties {
             productOfDigits *= i % 10;
         }
         return sumOfDigits == productOfDigits;
+    }
+
+    public String getShort() {
+        return PROPERTIES
+                .entrySet()
+                .stream()
+                .filter(e -> e.getValue().getAsBoolean())
+                .map(Map.Entry::getKey)
+                .collect(Collectors.joining(", "));
     }
 
     @Override

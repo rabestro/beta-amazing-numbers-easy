@@ -8,12 +8,24 @@ public class Main {
     public static void main(String[] args) {
         while (true) {
             System.out.println("Enter a natural number: ");
-            final var number = scanner.nextLong();
-            if (number == 0) {
+            final var data = scanner.nextLine().split(" ");
+            final var first = Long.parseLong(data[0]);
+            if (first == 0) {
                 break;
             }
-            final var properties = new NumberProperties(number);
-            System.out.println(properties);
+            if (data.length == 1) {
+                final var properties = new NumberProperties(first);
+                System.out.println(properties);
+                continue;
+            }
+            final var second = Long.parseLong(data[1]);
+            for (long number = first; number <= second; ++number) {
+                final var properties = new NumberProperties(number);
+                final var shortReport = properties.getShort();
+                if (!shortReport.isBlank()) {
+                    System.out.printf("%18d - %s%n", number, shortReport);
+                }
+            }
         }
     }
 
