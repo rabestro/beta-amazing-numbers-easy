@@ -1,0 +1,4 @@
+rootProject.name = 'Amazing Numbers I'
+include 'stage1'
+include 'stage2'
+
