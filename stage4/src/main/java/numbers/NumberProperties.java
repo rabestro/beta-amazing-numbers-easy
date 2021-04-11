@@ -5,13 +5,12 @@ import java.util.function.BooleanSupplier;
 import java.util.stream.Collectors;
 
 public class NumberProperties {
+    private final long number;
     private final Map<String, BooleanSupplier> PROPERTIES = Map.of(
             "gapful", this::isGapful,
             "harshad", this::isHarshad,
             "spy", this::isSpy
     );
-
-    private final long number;
 
     public NumberProperties(long number) {
         this.number = number;

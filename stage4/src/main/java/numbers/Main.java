@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         while (true) {
             System.out.println("Enter a natural number: ");
-            final var data = scanner.nextLine().split(" ");
+            final var data = scanner.nextLine().split("[,\\s]+");
             final var first = Long.parseLong(data[0]);
             if (first == 0) {
                 break;
