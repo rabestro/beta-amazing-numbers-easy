@@ -2,4 +2,5 @@ rootProject.name = 'Amazing Numbers I'
 include 'stage1'
 include 'stage2'
 include 'stage3'
+include 'stage4'
 
