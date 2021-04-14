@@ -19,6 +19,7 @@ public class Main {
                 continue;
             }
             final var second = Long.parseLong(data[1]);
+
             for (long number = first; number <= second; ++number) {
                 final var properties = new NumberProperties(number);
                 final var shortReport = properties.getShort();

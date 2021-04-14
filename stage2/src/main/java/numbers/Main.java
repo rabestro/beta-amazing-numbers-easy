@@ -12,6 +12,10 @@ public class Main {
             if (number == 0) {
                 break;
             }
+            if (number < 0) {
+                System.out.println("The number should be positive.");
+                continue;
+            }
             final var properties = new NumberProperties(number);
             System.out.println(properties);
         }

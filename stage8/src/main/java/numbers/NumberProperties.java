@@ -29,12 +29,14 @@ public class NumberProperties {
         return number % 2 == 0;
     }
 
+
     public boolean isGapful() {
         if (number < 100) {
             return false;
         }
         final var lastDigit = number % 10;
         var firstDigit = number / 100;
+
         while (firstDigit > 10) {
             firstDigit /= 10;
         }
