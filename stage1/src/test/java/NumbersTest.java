@@ -6,7 +6,7 @@ import org.hyperskill.hstest.testing.TestedProgram;
 
 import java.text.MessageFormat;
 
-public class AmazingNumbersTest extends StageTest {
+public class NumbersTest extends StageTest {
 
     final long[] number = {1, 2, 3, 4, 5};
 

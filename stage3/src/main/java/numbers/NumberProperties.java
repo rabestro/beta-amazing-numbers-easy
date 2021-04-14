@@ -1,7 +1,15 @@
 package numbers;
 
+import java.util.Map;
+import java.util.function.BooleanSupplier;
+import java.util.stream.Collectors;
+
 public class NumberProperties {
     private final long number;
+    private final Map<String, BooleanSupplier> PROPERTIES = Map.of(
+            "gapful", this::isGapful,
+            "harshad", this::isHarshad
+    );
 
     public NumberProperties(long number) {
         this.number = number;
@@ -32,6 +40,14 @@ public class NumberProperties {
         return number % sumOfDigits == 0;
     }
 
+    public String getShort() {
+        return PROPERTIES
+                .entrySet()
+                .stream()
+                .filter(e -> e.getValue().getAsBoolean())
+                .map(Map.Entry::getKey)
+                .collect(Collectors.joining(", "));
+    }
     @Override
     public String toString() {
         return String.format(
